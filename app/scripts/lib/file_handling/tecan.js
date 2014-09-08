@@ -82,12 +82,25 @@ define([ "lib/underscore_extensions"
   function dynMappings(obj, text) {
     var mappingByWell = [];
     var dynamicMappings = "";
+    console.log(text);
+    console.log(obj);
     _.each(obj.target, function(destData, destBarcode) {
+        console.log("destData");
+        console.log(destData);
+        console.log(destBarcode);
+        console.log(destData.mapping)        
         _.each(destData.mapping, function(mapping) {
+          console.log("mapping");
+          console.log(mapping.targetWell);
+          console.log(destData.plateSize);
           mappingByWell[descriptionToVerticalPlatePosition(mapping.targetWell,
             destData.plateSize)] = mapping;
         });
+        console.log("mapping");
+        console.log(mappingWell);
         _.each(mappingByWell, function(mapping) {
+            console.log(mapping);
+            console.log(mapping.srcWell);
             var sourceBarcode = mapping.srcWell[0];
             var sourceName = obj.source[sourceBarcode].name;
             var sourcePosition =
