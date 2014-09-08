@@ -82,8 +82,7 @@ define([ "lib/underscore_extensions"
   function dynMappings(obj, text) {
     var mappingByWell = [];
     var dynamicMappings = "";
-    _.chain(obj.target).each(
-      function(destData, destBarcode) {
+    _.each(obj.target, function(destData, destBarcode) {
         _.each(destData.mapping, function(mapping) {
           mappingByWell[descriptionToVerticalPlatePosition(mapping.targetWell,
             destData.plateSize)] = mapping;
