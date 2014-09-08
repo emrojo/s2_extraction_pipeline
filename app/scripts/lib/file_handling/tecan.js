@@ -87,8 +87,7 @@ define([ "lib/underscore_extensions"
           mappingByWell[descriptionToVerticalPlatePosition(mapping.targetWell,
             destData.plateSize)] = mapping;
         });
-        _.chain(mappingByWell).each(
-          function(mapping) {
+        _.each(mappingByWell, function(mapping) {
             var sourceBarcode = mapping.srcWell[0];
             var sourceName = obj.source[sourceBarcode].name;
             var sourcePosition =
