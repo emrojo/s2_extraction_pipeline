@@ -97,7 +97,7 @@ define([ "lib/underscore_extensions"
             destData.plateSize)] = mapping;
         });
         console.log("mapping");
-        console.log(mappingWell);
+        console.log(mappingByWell);
         _.each(mappingByWell, function(mapping) {
             console.log(mapping);
             console.log(mapping.srcWell);
