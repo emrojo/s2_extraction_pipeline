@@ -99,6 +99,9 @@ define([ "lib/underscore_extensions"
         console.log("mapping");
         console.log(mappingByWell);
         _.each(mappingByWell, function(mapping) {
+            if (typeof mapping.srcWell === "undefined") {
+              return;
+            }
             console.log(mapping);
             console.log(mapping.srcWell);
             var sourceBarcode = mapping.srcWell[0];
