@@ -98,6 +98,7 @@ define([ "lib/underscore_extensions"
         });
         console.log("mapping");
         console.log(mappingByWell);
+        mappingByWell=_.flatten(mappingByWell);
         _.each(mappingByWell, function(mapping) {
             if (typeof mapping.srcWell === "undefined") {
               return;
